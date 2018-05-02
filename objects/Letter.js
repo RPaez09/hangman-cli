@@ -1,18 +1,19 @@
-var Letter = function( assignedCharacter ){
+const Letter = function(assignedCharacter){
     this.character = assignedCharacter;
     this.isRevealed = false;
-}
+};
 
-Letter.prototype.render = function(){
-    if( this.isRevealed ){
-        return this.character
-    } else {
-        return "_"
-    }
-}
+Letter.prototype.toString = function(){
+    return (this.isRevealed ? this.character : "_")
+};
 
 Letter.prototype.guess = function( candidate ){
-    if( candidate === this.character ){
+    if(candidate.toLowerCase() === this.character.toLowerCase()){
         this.isRevealed = true;
+        return this
+    } else {
+        return this
     }
-}
+};
+
+module.exports = Letter;
