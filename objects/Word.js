@@ -8,7 +8,7 @@ const Word = function( newWord ){
 };
 
 Word.prototype.toString = function(){
-    return this.letters.join('');
+    return this.letters.join(' ');
 };
 
 Word.prototype.guess = function(candidate){
